@@ -2,7 +2,7 @@
 
 namespace BootCamp.Chapter.Models
 {
-    internal class TransactionDTO
+    public class TransactionDTO
     {
         public string City { get; set; }
         public string Street { get; set; }

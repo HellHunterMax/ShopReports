@@ -1,23 +1,31 @@
-<Transactions>
-  <Transaction>
+<?xml version='1.0'?>
+<ArrayOfTransactionDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TransactionDTO>
+    <City>Springfield</City>
+    <Street>HoloPapap 2</Street>
+    <Item>Apple</Item>
+    <DateTime>05/01/2020 20:00:00</DateTime>
+    <Price>3,00 €</Price>
+  </TransactionDTO>
+  <TransactionDTO>
     <City>Springfield</City>
     <Street>HoloPapap 2</Street>
     <Item>Sausage</Item>
-    <DateTime>2020-01-05T20:00:00Z</DateTime>
-    <Price>€8</Price>
-  </Transaction>
-  <Transaction>
+    <DateTime>05/01/2020 20:00:00</DateTime>
+    <Price>8,00 €</Price>
+  </TransactionDTO>
+  <TransactionDTO>
     <City>Springfield</City>
     <Street>HoloPapap 2</Street>
     <Item>Bannana</Item>
-    <DateTime>2020-01-05T22:00:00Z</DateTime>
-    <Price>€10</Price>
-  </Transaction>
-  <Transaction>
+    <DateTime>05/01/2020 22:00:00</DateTime>
+    <Price>10,00 €</Price>
+  </TransactionDTO>
+  <TransactionDTO>
     <City>Springfield</City>
     <Street>HoloPapap 2</Street>
     <Item>Bannana</Item>
-    <DateTime>2020-01-05T22:00:00Z</DateTime>
-    <Price>€15</Price>
-  </Transaction>
-</Transactions>
+    <DateTime>05/01/2020 22:00:00</DateTime>
+    <Price>15,50 €</Price>
+  </TransactionDTO>
+</ArrayOfTransactionDTO>

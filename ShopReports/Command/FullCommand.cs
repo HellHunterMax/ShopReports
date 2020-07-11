@@ -24,7 +24,7 @@ namespace BootCamp.Chapter.Command
         public void Execute()
         {
             AscendingOrDescending();
-            IEnumerable<IEnumerable<Transaction>> transactionsSortedByShop = TransactionsSortedByShop();
+            List<List<Transaction>> transactionsSortedByShop = TransactionsSortedByShop();
             WritePerShop(transactionsSortedByShop);
         }
 
@@ -48,37 +48,39 @@ namespace BootCamp.Chapter.Command
             }
         }
 
-        private IEnumerable<IEnumerable<Transaction>> TransactionsSortedByShop()
+        private List<List<Transaction>> TransactionsSortedByShop()
         {
-            IEnumerable<IEnumerable<Transaction>> sortedList =
+            IEnumerable<List<Transaction>> sortedList =
                 from tr in _transactions
                 group tr by tr.ShopName into newGroup
-                select newGroup;
+                select newGroup.ToList();
 
-            sortEarnedPerDayDecimalList(ref sortedList);
+            List<List<Transaction>> newSortedList = sortedList.ToList();
 
-            return sortedList;
+            sortEarnedPerDayDecimalList(ref newSortedList);
+
+            return newSortedList;
         }
 
-        private void sortEarnedPerDayDecimalList(ref IEnumerable<IEnumerable<Transaction>> sortedList)
+        private void sortEarnedPerDayDecimalList(ref List<List<Transaction>> sortedList)
         {
             if (_ascending)
             {
-                sortedList = sortedList.Select(x => x.OrderBy(c => c.Price));
+                sortedList = sortedList.Select(x => x.OrderBy(c => c.Price).ToList()).ToList();
             }
             else
             {
-                sortedList = sortedList.Select(x => x.OrderByDescending(c => c.Price));
+                sortedList = sortedList.Select(x => x.OrderByDescending(c => c.Price).ToList()).ToList();
             }
         }
 
-        private void WritePerShop(IEnumerable<IEnumerable<Transaction>> shoplist)
+        private void WritePerShop(List<List<Transaction>> shoplist)
         {
-            List<IEnumerable<Transaction>> shoplist1 = shoplist.ToList();
+            List<List<Transaction>> shoplist1 = shoplist.ToList();
 
             for (int i = 0; i < shoplist1.Count; i++)
             {
-                IEnumerable<TransactionDTO> transactionDTOs = createDTOListFromTransactionList(shoplist1[i]);
+                List<TransactionDTO> transactionDTOs = createDTOListFromTransactionList(shoplist1[i]).ToList();
                 _reportsManager.WriteModel(shoplist1[i].First().ShopName + _fileExtention, transactionDTOs);
             }
         }

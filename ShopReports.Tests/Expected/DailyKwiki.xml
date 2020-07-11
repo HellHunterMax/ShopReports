@@ -1,6 +1,7 @@
-<DailyEarnings>
+<?xml version='1.0'?>
+<ArrayOfEarning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Earning>
     <Day>Sunday</Day>
-    <Earned>€29</Earned>
+    <Earned>36,50 €</Earned>
   </Earning>
-</DailyEarnings>
+</ArrayOfEarning>
