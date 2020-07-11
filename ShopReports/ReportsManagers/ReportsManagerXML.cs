@@ -20,21 +20,9 @@ namespace BootCamp.Chapter.ReportsManagers
             return transactions;
         }
 
-        public override void WriteCityTransaction(string path, string toBeWritten)
-        {
-            if (String.IsNullOrWhiteSpace(path))
-            {
-                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
-            }
-            throw new NotImplementedException();
-        }
-
         public override void WriteModel<T>(string path, T model)
         {
-            if (String.IsNullOrWhiteSpace(path))
-            {
-                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
-            }
+            ValidateFilePathToWrite(path);
             string data = XmlConvert.SerializeObject(model);
 
             WriteTransaction(path, data);
@@ -42,10 +30,7 @@ namespace BootCamp.Chapter.ReportsManagers
 
         public override void WriteTimeTransaction(string path, TimesModel timesModel)
         {
-            if (String.IsNullOrWhiteSpace(path))
-            {
-                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
-            }
+            ValidateFilePathToWrite(path);
             string data = XmlConvert.SerializeObject(timesModel);
 
             WriteTransaction(path, data);

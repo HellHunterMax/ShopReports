@@ -1,120 +1,124 @@
-﻿<Earnings>
+﻿<?xml version='1.0'?>
+<Times xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Times>
-    <Time>
-      <Hour>1</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>2</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>3</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>4</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>5</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>6</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>7</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>8</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>9</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>10</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>11</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>12</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>13</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>14</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>15</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>16</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>17</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>18</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>19</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>20</Hour>
-      <Count>3</Count>
-      <Earned>€8</Earned>
-    </Time>
-    <Time>
-      <Hour>21</Hour>
-      <Count>0</Count>
-      <Earned>€0</Earned>
-    </Time>
-    <Time>
-      <Hour>2</Hour>
-      <Count>2</Count>
-      <Earned>€25</Earned>
-    </Time>
-    <Time>
-      <Hour>23</Hour>
-      <Count>2</Count>
-      <Earned>€10.05</Earned>
-    </Time>
+    <Hour>0</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>1</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>2</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>3</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>4</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>5</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>6</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>7</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>8</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>9</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>10</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>11</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>12</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>13</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>14</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>15</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>16</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>17</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>18</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>19</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>20</Hour>
+    <Count>4</Count>
+    <Earned>9,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>21</Hour>
+    <Count>0</Count>
+    <Earned>0,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>22</Hour>
+    <Count>2</Count>
+    <Earned>25,00 €</Earned>
+  </Times>
+  <Times>
+    <Hour>23</Hour>
+    <Count>2</Count>
+    <Earned>10,50 €</Earned>
   </Times>
   <RushHour>22</RushHour>
-</Earnings>
+</Times>

@@ -10,7 +10,7 @@ namespace BootCamp.Chapter.ReportsManagers
     {
         public override List<Transaction> ReadTransactionFile(string path)
         {
-            ValidateFilePath(path);
+            ValidateFilePathToRead(path);
             List<TransactionModeljson> dtoTransactions = JsonConvert.DeserializeObject<List<TransactionModeljson>>(File.ReadAllText(path));
             List<Transaction> transactions = new List<Transaction>();
 
@@ -30,21 +30,9 @@ namespace BootCamp.Chapter.ReportsManagers
             return transactions;
         }
 
-        public override void WriteCityTransaction(string path, string toBeWritten)
-        {
-            if (String.IsNullOrWhiteSpace(path))
-            {
-                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
-            }
-            throw new System.NotImplementedException();
-        }
-
         public override void WriteTimeTransaction(string path, TimesModel timesModel)
         {
-            if (String.IsNullOrWhiteSpace(path))
-            {
-                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
-            }
+            ValidateFilePathToWrite(path);
             string data = JsonConvert.SerializeObject(timesModel, Formatting.Indented);
 
             WriteTransaction(path, data);
@@ -52,10 +40,7 @@ namespace BootCamp.Chapter.ReportsManagers
 
         public override void WriteModel<T>(string path, T model)
         {
-            if (String.IsNullOrWhiteSpace(path))
-            {
-                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
-            }
+            ValidateFilePathToWrite(path);
             string data = JsonConvert.SerializeObject(model, Formatting.Indented);
 
             WriteTransaction(path, data);

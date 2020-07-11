@@ -45,7 +45,7 @@
     <Street>HoloPapap 2</Street>
     <Item>Bannana</Item>
     <DateTime>2020-01-05T22:00:00Z</DateTime>
-    <Price>€15</Price>
+    <Price>€15,50</Price>
   </Transaction>
   <Transaction>
     <Shop>Wallmart</Shop>

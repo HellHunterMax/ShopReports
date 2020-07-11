@@ -28,7 +28,7 @@ namespace BootCamp.Chapter.Tests
         {
             const string cmd = "blablabla";
 
-            Action action = () => Program.Main(new[] { cmd });
+            Action action = () => Program.Main(new[] {"Input/Transactions.json", cmd, OutputFile + ".json" });
 
             action.Should().Throw<InvalidCommandException>();
         }
@@ -113,7 +113,19 @@ namespace BootCamp.Chapter.Tests
 
         public void Dispose()
         {
-            if (File.Exists(OutputFile))
+            if (File.Exists(OutputFile + ".json"))
+            {
+                File.Delete(OutputFile + ".json");
+            }
+            if (File.Exists(OutputFile + ".xml"))
+            {
+                File.Delete(OutputFile + ".xml");
+            }
+            if (File.Exists(OutputFile + ".csv"))
+            {
+                File.Delete(OutputFile + ".csv");
+            }
+            if(File.Exists(OutputFile))
             {
                 File.Delete(OutputFile);
             }

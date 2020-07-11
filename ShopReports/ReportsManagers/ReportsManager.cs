@@ -21,11 +21,11 @@ namespace BootCamp.Chapter.ReportsManagers
 
         public abstract void WriteTimeTransaction(string path, TimesModel timesModel);
 
-        public abstract void WriteCityTransaction(string path, string toBeWritten);
+       // public abstract void WriteCityTransaction(string path, string toBeWritten);
 
         public abstract void WriteModel<T>(string path, T model);
 
-        public void ValidateFilePath(string path)
+        public void ValidateFilePathToRead(string path)
         {
             if (String.IsNullOrWhiteSpace(path))
             {
@@ -38,6 +38,17 @@ namespace BootCamp.Chapter.ReportsManagers
             if (new FileInfo(path).Length == 0)
             {
                 throw new NoTransactionsFoundException($"{path} is empty");
+            }
+        }
+        public void ValidateFilePathToWrite(string path)
+        {
+            if (String.IsNullOrWhiteSpace(path))
+            {
+                throw new NoTransactionsFoundException($"{nameof(path)} cannot be empty.");
+            }
+            if (File.Exists(path))
+            {
+                File.Delete(path);
             }
         }
     }
