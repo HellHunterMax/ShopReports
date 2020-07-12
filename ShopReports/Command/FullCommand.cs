@@ -50,27 +50,23 @@ namespace BootCamp.Chapter.Command
 
         private List<List<Transaction>> TransactionsSortedByShop()
         {
-            IEnumerable<List<Transaction>> sortedList =
+            IEnumerable<IEnumerable<Transaction>> sortedList =
                 from tr in _transactions
                 group tr by tr.ShopName into newGroup
-                select newGroup.ToList();
+                select newGroup;
 
-            List<List<Transaction>> newSortedList = sortedList.ToList();
-
-            sortEarnedPerDayDecimalList(ref newSortedList);
-
-            return newSortedList;
+            return sortEarnedPerDayDecimalList(sortedList); ;
         }
 
-        private void sortEarnedPerDayDecimalList(ref List<List<Transaction>> sortedList)
+        private List<List<Transaction>> sortEarnedPerDayDecimalList(IEnumerable<IEnumerable<Transaction>> sortedList)
         {
             if (_ascending)
             {
-                sortedList = sortedList.Select(x => x.OrderBy(c => c.Price).ToList()).ToList();
+                return sortedList.Select(x => x.OrderBy(c => c.Price).ToList()).ToList();
             }
             else
             {
-                sortedList = sortedList.Select(x => x.OrderByDescending(c => c.Price).ToList()).ToList();
+                return sortedList.Select(x => x.OrderByDescending(c => c.Price).ToList()).ToList();
             }
         }
 
