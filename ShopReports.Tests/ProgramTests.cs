@@ -36,6 +36,7 @@ namespace BootCamp.Chapter.Tests
         [Theory]
         [InlineData(".json")]
         [InlineData(".xml")]
+        [InlineData(".csv")]
         public void Main_When_Valid_Time_Command_Creates_File_And_Writes_Stats_For_Every_Hour(string extension)
         {
             const string cmd = "time";
@@ -49,6 +50,7 @@ namespace BootCamp.Chapter.Tests
         [Theory]
         [InlineData(".json")]
         [InlineData(".xml")]
+        [InlineData(".csv")]
         public void Main_When_Valid_Time_Command_With_Range_Creates_File_And_Writes_Stats_For_Every_Hour_Belonging_To_Range(string extension)
         {
             const string cmd = "time 20:00-00:00";
@@ -62,6 +64,7 @@ namespace BootCamp.Chapter.Tests
         [Theory]
         [InlineData(".json")]
         [InlineData(".xml")]
+        [InlineData(".csv")]
         public void Main_When_Valid_DailyRevenue_Command_Creates_File_And_Writes_Revenue_For_Each_Day_Of_Week(string extension)
         {
             const string cmd = "daily Kwiki Mart";
@@ -81,6 +84,10 @@ namespace BootCamp.Chapter.Tests
         [InlineData("city -items -min", @"expected\CityItemsMin", ".xml")]
         [InlineData("city -money -max", @"expected\CityMoneyMax", ".xml")]
         [InlineData("city -money -min", @"expected\CityMoneyMin", ".xml")]
+        [InlineData("city -items -max", @"expected\CityItemsMax", ".csv")]
+        [InlineData("city -items -min", @"expected\CityItemsMin", ".csv")]
+        [InlineData("city -money -max", @"expected\CityMoneyMax", ".csv")]
+        [InlineData("city -money -min", @"expected\CityMoneyMin", ".csv")]
         public void Main_When_Valid_MinMax_Command_With_Returns_Expected_Cities_With_Min_Max(string cmd, string expectedOutput, string extension)
         {
             Program.Main(new[] { ValidTransactionsFile + extension, cmd, OutputFile + extension });
@@ -91,6 +98,7 @@ namespace BootCamp.Chapter.Tests
         [Theory]
         [InlineData(".json")]
         [InlineData(".xml")]
+        [InlineData(".csv")]
         public void Main_When_Valid_Full_Command_Creates_Files_Based_On_Shop_With_All_Transactions(string extension)
         {
             const string cmd = "full";
