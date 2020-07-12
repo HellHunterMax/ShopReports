@@ -91,10 +91,10 @@ namespace BootCamp.Chapter
 
             int itemsPerCityMaxOrMin = maxOrMin == "-max" ? groupedcity.Max(g => g.Count) : groupedcity.Min(g => g.Count);
 
-            var toReturn = from i in groupedcity
+            var cityNames = from i in groupedcity
                            where i.Count == itemsPerCityMaxOrMin
                            select i.Key.Trim();
-            return toReturn;
+            return cityNames;
         }
 
         private void WriteToFile(IEnumerable<string> toBeWritten)

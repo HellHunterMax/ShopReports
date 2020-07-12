@@ -19,7 +19,7 @@ namespace BootCamp.Chapter.ReportsManagers
             File.AppendAllText(path, toBeWritten);
         }
 
-        public abstract void WriteTimeTransaction(string path, TimesModel timesModel);
+        //public abstract void WriteTimeTransaction(string path, TimesModel timesModel);
 
        // public abstract void WriteCityTransaction(string path, string toBeWritten);
 

@@ -30,14 +30,6 @@ namespace BootCamp.Chapter.ReportsManagers
             return transactions;
         }
 
-        public override void WriteTimeTransaction(string path, TimesModel timesModel)
-        {
-            ValidateFilePathToWrite(path);
-            string data = JsonConvert.SerializeObject(timesModel, Formatting.Indented);
-
-            WriteTransaction(path, data);
-        }
-
         public override void WriteModel<T>(string path, T model)
         {
             ValidateFilePathToWrite(path);

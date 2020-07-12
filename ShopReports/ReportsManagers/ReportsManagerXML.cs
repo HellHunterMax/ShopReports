@@ -27,13 +27,5 @@ namespace BootCamp.Chapter.ReportsManagers
 
             WriteTransaction(path, data);
         }
-
-        public override void WriteTimeTransaction(string path, TimesModel timesModel)
-        {
-            ValidateFilePathToWrite(path);
-            string data = XmlConvert.SerializeObject(timesModel);
-
-            WriteTransaction(path, data);
-        }
     }
 }
