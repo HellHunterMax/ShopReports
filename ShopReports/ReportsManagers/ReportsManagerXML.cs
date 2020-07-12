@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopReports.Models;
+using System;
 using System.Collections.Generic;
 
 namespace ShopReports.ReportsManagers
@@ -8,8 +9,8 @@ namespace ShopReports.ReportsManagers
         public override List<Transaction> ReadTransactionFile(string path)
         {
             List<Transaction> transactions = new List<Transaction>();
-            Models.XML.TransactionModelxml.Transactions xmlTransactions = XmlConvert.DeserializeFile<Models.XML.TransactionModelxml.Transactions>(path);
-            foreach (Models.XML.TransactionModelxml.TransactionsTransaction tr in xmlTransactions.Transaction)
+            TransactionModelxml.Transactions xmlTransactions = XmlConvert.DeserializeFile<TransactionModelxml.Transactions>(path);
+            foreach (TransactionModelxml.TransactionsTransaction tr in xmlTransactions.Transaction)
             {
                 if (Transaction.TryParse(tr.ToString(), out Transaction trans))
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopReports.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -17,11 +18,6 @@ namespace ShopReports.ReportsManagers
 
             File.AppendAllText(path, toBeWritten);
         }
-
-        //public abstract void WriteTimeTransaction(string path, TimesModel timesModel);
-
-       // public abstract void WriteCityTransaction(string path, string toBeWritten);
-
         public abstract void WriteModel<T>(string path, T model);
 
         public void ValidateFilePathToRead(string path)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopReports.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 

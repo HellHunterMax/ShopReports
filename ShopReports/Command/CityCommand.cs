@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopReports.Models;
+using ShopReports.ReportsManagers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -91,8 +93,8 @@ namespace ShopReports.Command
             int itemsPerCityMaxOrMin = maxOrMin == "-max" ? groupedcity.Max(g => g.Count) : groupedcity.Min(g => g.Count);
 
             var cityNames = from i in groupedcity
-                           where i.Count == itemsPerCityMaxOrMin
-                           select i.Key.Trim();
+                            where i.Count == itemsPerCityMaxOrMin
+                            select i.Key.Trim();
             return cityNames;
         }
 

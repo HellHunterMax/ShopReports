@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ShopReports.Command;
+using ShopReports.Models;
+using ShopReports.ReportsManagers;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ShopReports
