@@ -1,10 +1,9 @@
-﻿using BootCamp.Chapter.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace BootCamp.Chapter.ReportsManagers
+namespace ShopReports.ReportsManagers
 {
     public class ReportsManagerJson : ReportsManager
     {

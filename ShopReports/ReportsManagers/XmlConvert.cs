@@ -1,10 +1,9 @@
-﻿using BootCamp.Chapter.Exceptions;
-using System;
+﻿using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace BootCamp.Chapter.ReportsManagers
+namespace ShopReports.ReportsManagers
 {
     public static class XmlConvert
     {

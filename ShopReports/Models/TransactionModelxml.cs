@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace BootCamp.Chapter.Models.XML
+namespace ShopReports.Models
 {
     public class TransactionModelxml
     {

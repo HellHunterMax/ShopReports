@@ -1,14 +1,10 @@
-﻿using BootCamp.Chapter;
-using BootCamp.Chapter.Models;
-using BootCamp.Chapter.ReportsManagers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace ShopReports.ReportsManagers
 {
-    class ReportsManagerCsv : ReportsManager
+    public class ReportsManagerCsv : ReportsManager
     {
         public override List<Transaction> ReadTransactionFile(string path)
         {

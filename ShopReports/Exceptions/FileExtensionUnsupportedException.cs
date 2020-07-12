@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BootCamp.Chapter.Exceptions
+namespace ShopReports
 {
     internal class FileExtensionUnsupportedException : Exception
     {

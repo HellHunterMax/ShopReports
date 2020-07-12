@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace BootCamp.Chapter.Exceptions
+namespace ShopReports
 {
     public class SerializationException : Exception
     {

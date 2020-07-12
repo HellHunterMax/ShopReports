@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace BootCamp.Chapter
+namespace ShopReports.Models
 {
     public class Transaction
     {

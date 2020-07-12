@@ -1,8 +1,7 @@
-﻿using BootCamp.Chapter.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace BootCamp.Chapter.ReportsManagers
+namespace ShopReports.ReportsManagers
 {
     internal class ReportsManagerXML : ReportsManager
     {

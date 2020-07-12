@@ -1,10 +1,9 @@
-﻿using BootCamp.Chapter.ReportsManagers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BootCamp.Chapter
+namespace ShopReports.Command
 {
     internal class CityCommand : ICommand
     {

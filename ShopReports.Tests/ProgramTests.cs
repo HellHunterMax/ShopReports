@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using Xunit;
 
-namespace BootCamp.Chapter.Tests
+namespace ShopReports.Tests
 {
     // You don't have to be here for a long time.
     public class ProgramTests : IDisposable

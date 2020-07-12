@@ -1,4 +1,4 @@
-﻿namespace BootCamp.Chapter
+﻿namespace ShopReports.Models
 {
     public class TransactionModeljson
     {

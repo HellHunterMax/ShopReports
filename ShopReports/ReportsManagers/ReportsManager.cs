@@ -1,9 +1,8 @@
-﻿using BootCamp.Chapter.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace BootCamp.Chapter.ReportsManagers
+namespace ShopReports.ReportsManagers
 {
     public abstract class ReportsManager
     {

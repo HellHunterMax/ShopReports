@@ -1,11 +1,9 @@
-﻿using BootCamp.Chapter.Models;
-using BootCamp.Chapter.ReportsManagers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BootCamp.Chapter.Command
+namespace ShopReports.Command
 {
     public class DailyCommand : ICommand
     {

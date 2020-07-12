@@ -1,9 +1,7 @@
-﻿using BootCamp.Chapter.Models;
-using BootCamp.Chapter.ReportsManagers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace BootCamp.Chapter.Command
+namespace ShopReports.Command
 {
     internal class FullCommand : ICommand
     {

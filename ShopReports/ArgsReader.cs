@@ -1,10 +1,7 @@
-﻿using BootCamp.Chapter.Command;
-using BootCamp.Chapter.Exceptions;
-using BootCamp.Chapter.ReportsManagers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace BootCamp.Chapter
+namespace ShopReports
 {
     public class ArgsReader
     {
@@ -22,7 +19,7 @@ namespace BootCamp.Chapter
             ValidateArgs(args);
             ValidateCommand(args[commandInt]);
 
-            ReportsManager reportsManager = GetCorrectReportsManagerFromArgs(args);
+            ReportsManagers.ReportsManager reportsManager = GetCorrectReportsManagerFromArgs(args);
 
             List<Transaction> transactions = reportsManager.ReadTransactionFile(args[fileToReadInt]);
 
@@ -68,6 +65,11 @@ namespace BootCamp.Chapter
                 case "xml":
                     fileExtention = ".xml";
                     reportsManager = new ReportsManagerXML();
+                    break;
+
+                case "csv":
+                    fileExtention = ".csv";
+                    reportsManager = new ReportsManagerCsv();
                     break;
 
                 default:

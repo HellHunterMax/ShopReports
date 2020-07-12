@@ -1,4 +1,4 @@
-﻿namespace BootCamp.Chapter
+﻿namespace ShopReports.Command
 {
     public interface ICommand
     {

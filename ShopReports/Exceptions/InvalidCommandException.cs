@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BootCamp.Chapter
+namespace ShopReports
 {
     public class InvalidCommandException : Exception
     {

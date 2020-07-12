@@ -1,11 +1,9 @@
-﻿using BootCamp.Chapter.Models;
-using BootCamp.Chapter.ReportsManagers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace BootCamp.Chapter
+namespace ShopReports.Command
 {
     internal class TimeCommand : ICommand
     {

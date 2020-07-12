@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace BootCamp.Chapter.Models
+namespace ShopReports.Models
 {
     public class TransactionDTO
     {

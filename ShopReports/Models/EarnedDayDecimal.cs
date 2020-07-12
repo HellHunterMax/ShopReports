@@ -1,4 +1,4 @@
-﻿namespace BootCamp.Chapter.Models
+﻿namespace ShopReports.Models
 {
     public class EarnedDayDecimal
     {
