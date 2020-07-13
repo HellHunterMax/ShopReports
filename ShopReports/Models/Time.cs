@@ -17,5 +17,10 @@ namespace ShopReports.Models
         {
             return earned.ToString("C2", CultureInfo.GetCultureInfo("lt-LT"));
         }
+
+        public string ToCsvString()
+        {
+            return $"{Hour.ToString("D2")}, {Count}, \"{Earned}\"";
+        }
     }
 }

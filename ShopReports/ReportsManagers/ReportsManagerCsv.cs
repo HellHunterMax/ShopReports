@@ -31,7 +31,14 @@ namespace ShopReports.ReportsManagers
 
         public override void WriteModel<T>(string path, T model)
         {
-            throw new NotImplementedException();
+            //Has to write all types of models into a csv file....
+            // for now just TransActionDTO, TimesModel and  Earning.
+            //TODO TransActionDTO csv
+            //TODO Earning csv
+
+            ValidateFilePathToWrite(path);
+
+            File.WriteAllText(path, model.ToString());
         }
     }
 }
