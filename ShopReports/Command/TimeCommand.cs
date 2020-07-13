@@ -24,8 +24,8 @@ namespace ShopReports.Command
 
         public void Execute()
         {
-            var toBeWritten = CreateReport();
-            _reportsManager.WriteModel(_path, toBeWritten);
+            var report = CreateReport();
+            _reportsManager.WriteModel(_path, report);
         }
 
         private TimesModel CreateReport()
