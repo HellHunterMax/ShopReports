@@ -33,7 +33,7 @@ namespace ShopReports.ReportsManagers
         {
             //Has to write all types of models into a csv file....
             // for now just TransActionDTO, TimesModel and  Earning.
-            //TODO TransActionDTO csv
+            //TODO csv change expected for Full Command
             //TODO Earning csv
 
             ValidateFilePathToWrite(path);
