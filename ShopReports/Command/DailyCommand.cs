@@ -31,12 +31,12 @@ namespace ShopReports.Command
             ExtractShopName();
             ValidateShopName();
 
-            IEnumerable<EarnedDayDecimal> earnedPerDayDecimal = GetEarnedPerDayDecimalForShop();
-            sortEarnedPerDayDecimalList(ref earnedPerDayDecimal);
+            IEnumerable<EarnedDayDecimal> shopEarnedPerDayDecimal = GetEarnedPerDayDecimalForShop();
+            sortEarnedPerDayDecimalList(ref shopEarnedPerDayDecimal);
 
-            ListEarning<Earning> EarnedPerDay = ListEarning<Earning>.ToListTransactionDTO(GetEarningListFromEarnedDayDecimalList(earnedPerDayDecimal));
+            ListEarning<Earning> shopEarningsPerDayOfTheWeek = ListEarning<Earning>.ToListTransactionDTO(GetEarningListFromEarnedDayDecimalList(shopEarnedPerDayDecimal));
 
-            _reportsManager.WriteModel(_path, EarnedPerDay);
+            _reportsManager.WriteModel(_path, shopEarningsPerDayOfTheWeek);
         }
 
         private void AscendingOrDescending()
