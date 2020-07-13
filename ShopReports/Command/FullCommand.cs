@@ -1,4 +1,5 @@
 ﻿using ShopReports.Models;
+using ShopReports.Models.ListOverrides;
 using ShopReports.ReportsManagers;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,7 +77,7 @@ namespace ShopReports.Command
 
             for (int i = 0; i < shoplist1.Count; i++)
             {
-                List<TransactionDTO> transactionDTOs = createDTOListFromTransactionList(shoplist1[i]).ToList();
+                ListTransactionDTO<TransactionDTO> transactionDTOs = ListTransactionDTO<TransactionDTO>.ToListTransactionDTO(createDTOListFromTransactionList(shoplist1[i]).ToList());
                 _reportsManager.WriteModel(shoplist1[i].First().ShopName + _fileExtention, transactionDTOs);
             }
         }

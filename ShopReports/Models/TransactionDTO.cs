@@ -17,7 +17,7 @@ namespace ShopReports.Models
 
         public override string ToString()
         {
-            return $"{City},{Street},{Item},{DateTime},{Price}";
+            return $"{City}, {Street}, {Item}, {DateTime}, \"{Price}\"";
         }
     }
 }
