@@ -1,4 +1,5 @@
 ﻿using ShopReports.Models;
+using ShopReports.Models.ListOverrides;
 using ShopReports.ReportsManagers;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace ShopReports.Command
             IEnumerable<EarnedDayDecimal> earnedPerDayDecimal = GetEarnedPerDayDecimalForShop();
             sortEarnedPerDayDecimalList(ref earnedPerDayDecimal);
 
-            List<Earning> EarnedPerDay = GetEarningListFromEarnedDayDecimalList(earnedPerDayDecimal);
+            ListEarning<Earning> EarnedPerDay = ListEarning<Earning>.ToListTransactionDTO(GetEarningListFromEarnedDayDecimalList(earnedPerDayDecimal));
 
             _reportsManager.WriteModel(_path, EarnedPerDay);
         }

@@ -21,5 +21,10 @@ namespace ShopReports.Models
         {
             return earned.ToString("C2", CultureInfo.GetCultureInfo("lt-LT"));
         }
+
+        public override string ToString()
+        {
+            return $"{Day}, \"{Earned}\"";
+        }
     }
 }

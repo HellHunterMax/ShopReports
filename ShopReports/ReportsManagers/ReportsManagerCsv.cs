@@ -31,10 +31,6 @@ namespace ShopReports.ReportsManagers
 
         public override void WriteModel<T>(string path, T model)
         {
-            //Has to write all types of models into a csv file....
-            // for now just TransActionDTO, TimesModel and  Earning.
-            //TODO csv change expected for Full Command
-            //TODO Earning csv
 
             ValidateFilePathToWrite(path);
 
