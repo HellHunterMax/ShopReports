@@ -24,8 +24,8 @@ namespace ShopReports.Command
 
         public void Execute()
         {
-            var toBeWritten = CreateReport();
-            WriteToFile(toBeWritten);
+            var report = CreateReport();
+            WriteToFile(report);
         }
 
         private IEnumerable<string> CreateReport()
@@ -34,14 +34,15 @@ namespace ShopReports.Command
             const string items = "-items";
             const string min = "-min";
             const string max = "-max";
+            
+            if (_command.Count != 3)
+            {
+                throw new InvalidCommandException($"\"{String.Join(Environment.NewLine, _command)}\" has the wrong amount of parameters.");
+            }
+
             string command = _command[0];
             string commandParameter1 = _command[1];
             string commandParameter2 = _command[2];
-
-            if (_command.Count != 3)
-            {
-                throw new InvalidCommandException($"{_command.ToString()} has the wrong amount of parameters.");
-            }
 
             if (commandParameter1 == items)
             {
@@ -51,7 +52,7 @@ namespace ShopReports.Command
                 }
                 else
                 {
-                    throw new InvalidCommandException($"{commandParameter2} is not a valid parameter.");
+                    throw new InvalidCommandException($"\"{commandParameter2}\" is not a valid parameter.");
                 }
             }
             else if (commandParameter1 == money)
@@ -62,12 +63,12 @@ namespace ShopReports.Command
                 }
                 else
                 {
-                    throw new InvalidCommandException($"{commandParameter2} is not a valid parameter.");
+                    throw new InvalidCommandException($"\"{commandParameter2}\" is not a valid parameter.");
                 }
             }
             else
             {
-                throw new InvalidCommandException($"{commandParameter1} is not a valid parameter.");
+                throw new InvalidCommandException($"\"{commandParameter1}\" is not a valid parameter.");
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using ShopReports.Models;
 using ShopReports.Models.ListOverrides;
 using ShopReports.ReportsManagers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,7 +25,9 @@ namespace ShopReports.Command
 
         public void Execute()
         {
+            ValidateCommand();
             AscendingOrDescending();
+
             List<List<Transaction>> transactionsSortedByShop = TransactionsSortedByShop();
             WritePerShop(transactionsSortedByShop);
         }
@@ -92,6 +95,25 @@ namespace ShopReports.Command
                 Price = TransactionDTO.ConvertDecimalToStringCurrency(a.Price),
                 Street = a.Street
             });
+        }
+
+        private void ValidateCommand()
+        {
+            if (_command.Count > 1 && _command.Count < 3)
+            {
+                if(!(_command[1] == "-asc" || _command[1] == "-desc"))
+                {
+                    throw new InvalidCommandException($"\"{_command[1]}\" is not a valid parameter for {_command[0]}.");
+                }
+            }
+            else if (_command.Count == 1)
+            {
+
+            }
+            else
+            {
+                throw new InvalidCommandException($"\"{String.Join(Environment.NewLine, _command)}\" has the wrong amount of parameters.");
+            }
         }
     }
 }

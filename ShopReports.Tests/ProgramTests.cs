@@ -23,11 +23,13 @@ namespace ShopReports.Tests
             action.Should().Throw<NoTransactionsFoundException>();
         }
 
-        [Fact]
-        public void Main_When_Command_Invalid_Throws_InvalidCommandException()
+        [Theory]
+        [InlineData("blablabla")]
+        [InlineData("city")]
+        [InlineData("daily")]
+        [InlineData("full idontcare")]
+        public void Main_When_Command_Invalid_Throws_InvalidCommandException(string cmd)
         {
-            const string cmd = "blablabla";
-
             Action action = () => Program.Main(new[] {"Input/Transactions.json", cmd, OutputFile + ".json" });
 
             action.Should().Throw<InvalidCommandException>();
