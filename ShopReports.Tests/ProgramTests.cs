@@ -27,7 +27,11 @@ namespace ShopReports.Tests
         [InlineData("blablabla")]
         [InlineData("city")]
         [InlineData("daily")]
+        [InlineData("daily unknown shopname")]
         [InlineData("full idontcare")]
+        [InlineData("time idontcare")]
+        [InlineData("time 23:00-01:00")]
+        [InlineData("time 01:00 - 15:00")]
         public void Main_When_Command_Invalid_Throws_InvalidCommandException(string cmd)
         {
             Action action = () => Program.Main(new[] {"Input/Transactions.json", cmd, OutputFile + ".json" });

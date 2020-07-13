@@ -39,16 +39,16 @@ namespace ShopReports.Command
             }
             else if (_command.Count == 2)
             {
-                //Time Command given with times only gives a report within time frame.
+                //Time Command given with times gives a report within time frame.
                 if (IsHoursValid(_command[1], out times))
                 {
                     return GroupedByTime(_transactions, times);
                 }
-                throw new InvalidCommandException($"{_command[0]} has the wrong Times.");
+                throw new InvalidCommandException($"\"{String.Join(Environment.NewLine, _command)}\" has the wrong Times.");
             }
             else
             {
-                throw new InvalidCommandException($"{_command[0]} has to many parameters.");
+                throw new InvalidCommandException($"\"{String.Join(Environment.NewLine, _command)}\" has to many parameters.");
             }
         }
 
@@ -133,6 +133,10 @@ namespace ShopReports.Command
             if (times[1].Hour == 0)
             {
                 times[1] = new DateTime(2020, 01, 01, 23, 00, 00);
+            }
+            if (times[0].Hour > times[1].Hour)
+            {
+                return false;
             }
 
             return true;

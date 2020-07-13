@@ -5,7 +5,6 @@ A command line program that reads Files with transactions with different extensi
 ## Can read/write the folowing file types:
 - .json
 - .xml
-To be implemented
 - .csv
 
 ### write info.

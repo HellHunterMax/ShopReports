@@ -84,7 +84,7 @@ namespace ShopReports.Command
             }
             else
             {
-                throw new InvalidCommandException($"Shop name {_shop} does not exsist.");
+                throw new InvalidCommandException($"Shop name \"{_shop}\" does not exsist.");
             }
         }
 
