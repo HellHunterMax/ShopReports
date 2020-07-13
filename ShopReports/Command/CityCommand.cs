@@ -40,7 +40,6 @@ namespace ShopReports.Command
                 throw new InvalidCommandException($"\"{String.Join(Environment.NewLine, _command)}\" has the wrong amount of parameters.");
             }
 
-            string command = _command[0];
             string commandParameter1 = _command[1];
             string commandParameter2 = _command[2];
 
@@ -48,7 +47,7 @@ namespace ShopReports.Command
             {
                 if (commandParameter2 == min || commandParameter2 == max)
                 {
-                    return FindItemsMaxOrMin(_transactions, commandParameter2);
+                    return GetCityWithMostOrLeastItemsSold(_transactions, commandParameter2);
                 }
                 else
                 {
@@ -59,7 +58,7 @@ namespace ShopReports.Command
             {
                 if (commandParameter2 == min || commandParameter2 == max)
                 {
-                    return FindMoneyMaxOrMin(_transactions, commandParameter2);
+                    return GetCityWithMostOrLeastIncome(_transactions, commandParameter2);
                 }
                 else
                 {
@@ -72,31 +71,31 @@ namespace ShopReports.Command
             }
         }
 
-        private static IEnumerable<String> FindMoneyMaxOrMin(List<Transaction> transactions, string maxOrMin)
+        private static IEnumerable<String> GetCityWithMostOrLeastIncome(List<Transaction> transactions, string maxOrMin)
         {
-            var groupedcity = transactions.GroupBy(i => i.City)
+            var TotalMoneyPerCity = transactions.GroupBy(i => i.City)
                                           .Select(g => new { g.Key, Total = g.Sum(i => i.Price) });
 
-            decimal itemsPerCityMaxOrMin = maxOrMin == "-max" ? groupedcity.Max(g => g.Total) : groupedcity.Min(g => g.Total);
+            decimal totalMoneyPerCityOrderd = maxOrMin == "-max" ? TotalMoneyPerCity.Max(g => g.Total) : TotalMoneyPerCity.Min(g => g.Total);
 
-            var toReturn = from i in groupedcity
-                           where i.Total == itemsPerCityMaxOrMin
+            var CityNamesWithMostOrLeastEarned = from i in TotalMoneyPerCity
+                           where i.Total == totalMoneyPerCityOrderd
                            select i.Key.Trim();
-            return toReturn;
+            return CityNamesWithMostOrLeastEarned;
         }
 
-        private static IEnumerable<String> FindItemsMaxOrMin(List<Transaction> transactions, string maxOrMin)
+        private static IEnumerable<String> GetCityWithMostOrLeastItemsSold(List<Transaction> transactions, string maxOrMin)
         {
-            var groupedcity = from i in transactions
+            var itemsSoldPerCity = from i in transactions
                               group i.City by i.City into g
                               select new { g.Key, Count = g.Count() };
 
-            int itemsPerCityMaxOrMin = maxOrMin == "-max" ? groupedcity.Max(g => g.Count) : groupedcity.Min(g => g.Count);
+            int itemsSoldPerCityOrderd = maxOrMin == "-max" ? itemsSoldPerCity.Max(g => g.Count) : itemsSoldPerCity.Min(g => g.Count);
 
-            var cityNames = from i in groupedcity
-                            where i.Count == itemsPerCityMaxOrMin
+            var cityNamesWithLeastOrMostSold = from i in itemsSoldPerCity
+                            where i.Count == itemsSoldPerCityOrderd
                             select i.Key.Trim();
-            return cityNames;
+            return cityNamesWithLeastOrMostSold;
         }
 
         private void WriteToFile(IEnumerable<string> toBeWritten)
